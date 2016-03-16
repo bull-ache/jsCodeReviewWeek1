@@ -7,6 +7,17 @@ var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync').create();
+var lib = require('bower-files')({
+  "overrides":{
+    "bootstrap" : {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+});
 
 //Here is the bit of code we will use to tell which kind of environment we are using
 var buildProduction = utilities.env.production;
@@ -40,13 +51,14 @@ gulp.task("clean", function(){
   return del(['build', 'tmp']);
 });
 
-//Creates either a dev or production build.  This is determined by the absence or presence of the --production flag. If it is a production build, it starts uglify, else is starts browserify.
-gulp.task("build", ['clean'], function(){
+//Creates either a dev or production build.  This is determined by the absence or presence of the --production flag. If it is a production build, it starts uglify, else is starts browserify.  After that, it runs the bower task.
+gulp.task('build', ['clean'], function(){
   if (buildProduction) {
     gulp.start('minifyScripts');
   } else {
     gulp.start('jsBrowserify');
   }
+  gulp.start('bower');
 });
 
 //Allows you to debug your JS code by running "gulp jshint" in the terminal
@@ -84,3 +96,21 @@ gulp.task('bowerBuild', ['bower'], function(){
 gulp.task('htmlBuild', function() {
   browserSync.reload();
 });
+
+//bower-files task for JS frontend dependencies
+gulp.task('bowerJS', function () {
+  return gulp.src(lib.ext('js').files)
+    .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/js'));
+});
+
+//bower-files task for CSS frontend dependencies
+gulp.task('bowerCSS', function () {
+  return gulp.src(lib.ext('css').files)
+    .pipe(concat('vendor.css'))
+    .pipe(gulp.dest('./build/css'));
+});
+
+//task to run bowerJS and bowerCSS at the same time with one command: gulp bower
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
