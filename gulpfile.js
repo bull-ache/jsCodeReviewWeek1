@@ -56,7 +56,7 @@ gulp.task('jshint', function(){
     .pipe(jshint.reporter('default'));
 });
 
-//Browsersync task
+//Browsersync task, with the list of files we are watching and their corresponding build tasks listed below
 gulp.task('serve', function() {
   browserSync.init({
     server: {
@@ -65,8 +65,22 @@ gulp.task('serve', function() {
     }
   });
 
-//the list of files we are watching
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']);
+});
+
+//the jsBuild task
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+
+//the bowerBuild task
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
+//the html build task
+gulp.task('htmlBuild', function() {
+  browserSync.reload();
 });
