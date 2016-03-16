@@ -7,6 +7,8 @@ var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
@@ -114,3 +116,12 @@ gulp.task('bowerCSS', function () {
 
 //task to run bowerJS and bowerCSS at the same time with one command: gulp bower
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
+
+//This task loads all source files inside of our scss folder with the extension .scss. Then it processes them by calling the sourcemaps.init method, followed by the sass method. The sass method translates our files into normal CSS, the sourcemaps package adds some code which allows us to see which SASS files are responsible for each CSS rule that we see in the browser. This makes debugging a lot easier. The last two methods save our compiled CSS with its source maps in a destination folder called css. 
+gulp.task('cssBuild', function() {
+  return gulp.src('scss/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./build/css'));
+});
