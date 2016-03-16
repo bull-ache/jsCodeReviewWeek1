@@ -82,6 +82,7 @@ gulp.task('serve', ['build'], function() {
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']);
+  gulp.watch(["scss/*.scss"], ['cssBuild']);
 });
 
 //the jsBuild task
@@ -117,7 +118,7 @@ gulp.task('bowerCSS', function () {
 //task to run bowerJS and bowerCSS at the same time with one command: gulp bower
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
 
-//This task loads all source files inside of our scss folder with the extension .scss. Then it processes them by calling the sourcemaps.init method, followed by the sass method. The sass method translates our files into normal CSS, the sourcemaps package adds some code which allows us to see which SASS files are responsible for each CSS rule that we see in the browser. This makes debugging a lot easier. The last two methods save our compiled CSS with its source maps in a destination folder called css. 
+//This task loads all source files inside of our scss folder with the extension .scss. Then it processes them by calling the sourcemaps.init method, followed by the sass method. The sass method translates our files into normal CSS, the sourcemaps package adds some code which allows us to see which SASS files are responsible for each CSS rule that we see in the browser. This makes debugging a lot easier. The last two methods save our compiled CSS with its source maps in a destination folder called css.
 gulp.task('cssBuild', function() {
   return gulp.src('scss/*.scss')
     .pipe(sourcemaps.init())
