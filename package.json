@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "prompt": "^1.0.0"
-  }
+  },
   "author": "Blake Scott",
   "license": "ISC",
   "bugs": {
