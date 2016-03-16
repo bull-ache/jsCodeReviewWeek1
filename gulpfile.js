@@ -68,8 +68,8 @@ gulp.task('jshint', function(){
     .pipe(jshint.reporter('default'));
 });
 
-//Browsersync task, with the list of files we are watching and their corresponding build tasks listed below
-gulp.task('serve', function() {
+//Browsersync task, with the list of files we are watching and their corresponding build tasks listed below.  Will automatically run build, as it is included as a dependency.
+gulp.task('serve', ['build'], function() {
   browserSync.init({
     server: {
       baseDir: "./",
