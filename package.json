@@ -1,12 +1,15 @@
 {
-  "name": "js-template",
+  "name": "jstemplate",
   "version": "1.0.0",
+  "description": "A simple template for node projects",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakerscott/jsTemplate.git"
+  },
   "devDependencies": {
     "browserify": "^13.0.0",
     "del": "^2.2.0",
@@ -19,15 +22,12 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/browneryan/js-template.git"
-  },
+    "prompt": "^1.0.0"
+  }
+  "author": "Blake Scott",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/browneryan/js-template/issues"
+    "url": "https://github.com/blakerscott/jsTemplate/issues"
   },
-  "homepage": "https://github.com/browneryan/js-template#readme",
-  "description": ""
+  "homepage": "https://github.com/blakerscott/jsTemplate#readme",
 }
