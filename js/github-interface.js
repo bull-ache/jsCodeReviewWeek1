@@ -1,6 +1,6 @@
-var userInput = require('./../js/userInput.js').userInput;
+var apiKey = require('./../.env').apiKey;
 
-  exports.getRepos = function(){
+  exports.getRepos = function(repos){
     $.get('https://api.github.com/users/' + gitName + '/repos?access_token=' + apiKey).then(function(response){
       console.log(response);
 
@@ -13,5 +13,3 @@ var userInput = require('./../js/userInput.js').userInput;
       console.log(error.responseJSON.message);
     });
   };
-
-  

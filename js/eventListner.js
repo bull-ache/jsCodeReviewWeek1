@@ -1,4 +1,4 @@
-var getRepos = require('./../js/github-request.js').getRepos;
+var getRepos = require('./../js/github-interface.js').getRepos;
 
 $(document).ready(function(){
   $('#search').click(function(event){
