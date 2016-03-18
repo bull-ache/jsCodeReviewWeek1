@@ -1,7 +1,7 @@
 var apiKey = require('./../.env').apiKey;
 
   exports.getRepos = function(repos){
-    $.get('https://api.github.com/users/' + repos + '/repos?access_token=3ec084b296ca7bdfdc9169ce1ddde7106c2878d1').then(function(response){
+    $.get('https://api.github.com/users/' + repos + '/repos?access_token=' + apiKey).then(function(response){
       console.log(response);
       $('#picture').append('<img src='+ response[0].owner.avatar_url +'>');
 
