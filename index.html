@@ -10,9 +10,13 @@
   <body>
     <div class="container">
       <h1>Get a list of all repos associated with a username:</h1>
-      <label for="name">Enter a Github Username:</label>
-      <input id="name" type="text">
-      <button class="btn-success" id="search">Search</button>
+      <div id="form">
+      <form id="getName">
+        <label for="username">Enter a Github Username</label>
+        <input type="text" id="name">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
       <ul class="showRepos"></ul>
     </div>
   </body>

@@ -26,6 +26,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "bower-files": "^3.11.3",
     "prompt": "^1.0.0"
   },
   "author": "Blake Scott",
