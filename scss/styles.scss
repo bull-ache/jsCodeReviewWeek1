@@ -1,20 +1,25 @@
-$gray : #d3d3d3;
+$lightblue : #619e9e;
 
 
-#jumbo {
-  text-align: center;
+.img-circle {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
 }
 
 
+.jumbotron {
 
-.box {
-  background: $gray;
-  border: 3px solid black;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  background: $lightblue;
+  // border: 3px solid black;
   padding: 40px 80px;
   .button {
     font-weight: bold;
     text-align: center;
-    background: red;
-    color: white;
   }
 }
