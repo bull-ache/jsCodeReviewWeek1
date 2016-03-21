@@ -7,12 +7,13 @@ var apiKey = require('./../.env').apiKey;
   exports.getProfile = function(repos){
     $.get('https://api.github.com/users/' + repos + '?access_token=' + apiKey).then(function(response){
       console.log(response);
-      $('.showPicture').append('<img src='+ response[0].owner.avatar_url +'>');
-      $('.showFullName').append('<ul><li> Real Name: ' + response[i].name + '</li></ul>');
-      $('.showEmail').append('<ul><li> Description: ' + response[i].email + '</li></ul>');
-      $('.showFollowers').append('<ul><li> Repo Name: ' + response[i].followers + '</li></ul>');
-      $('.showFollowing').append('<ul><li> Description: ' + response[i].following + '</li></ul>');
-    }).fail(function(error){
+      $('#showPicture').append('<img src='+ response[0].avatar_url +'>');
+      $('#showFullName').append('<ul><li> Real Name: ' + response[0].name + '</li></ul>');
+      $('#showEmail').append('<ul><li> Description: ' + response[0].email + '</li></ul>');
+      $('#showFollowers').append('<ul><li> Repo Name: ' + response[0].followers + '</li></ul>');
+      $('#showFollowing').append('<ul><li> Description: ' + response[0].following + '</li></ul>');
+    })
+    .fail(function(error){
       console.log(error.responseJSON.message);
     });
   };
@@ -36,30 +37,28 @@ var apiKey = require('./../.env').apiKey;
   };
 
 },{"./../.env":1}],4:[function(require,module,exports){
-var getRepos = require('./../js/getRepos.js').getRepos;
 var getProfile = require('./../js/getProfile.js').getProfile;
+var getRepos = require('./../js/getRepos.js').getRepos;
 
 $(document).ready(function(){
   $('#getProfile').submit(function(event){
   event.preventDefault();
-  $('#picture').empty("");
-  $('.showRepos').empty("");
-  var repos = $('#name').val();
-  getRepos(repos);
-  $('#name').val("");
+  $('#showPicture').empty("");
+  $('#showFullName').empty("");
+  $('#showEmail').empty("");
+  $('#showFollowers').empty("");
+  $('#showFollowing').empty("");
+  var repos = $('#username').val();
+  getProfile(repos);
+  $('#username').val("");
+
   });
-
-
-
-
   $('#getName').submit(function(event){
   event.preventDefault();
   var repos = $('#name').val();
   getRepos(repos);
   $('#name').val("");
   });
-
-
 });
 
 },{"./../js/getProfile.js":2,"./../js/getRepos.js":3}]},{},[4]);

@@ -8,22 +8,25 @@
     <title>Bike Index</title>
   </head>
   <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Blake's Github App</h1>
+      </div>
+    </div>
     <div class="container">
       <h1>Type in a username to see their profile:</h1>
-      <div>
         <form id="getProfile">
-          <label for="profile">Enter a Github Username</label>
-          <input type="text" id="profile">
+          <label for="username">Enter a Github Username</label>
+          <input type="text" id="username">
           <button type="submit">Submit</button>
         </form>
-        <div class="showPicture"></div>
-          <ul class="showFullName"></ul>
-          <ul class="showEmail"></ul>
-          <ul class="showFollowers"></ul>
-          <ul class="showFollowing"></ul>
-      </div>
+        <div id="showPicture"></div>
+          <ul id="showFullName"></ul>
+          <ul id="showEmail"></ul>
+          <ul id="showFollowers"></ul>
+          <ul id="showFollowing"></ul>
       <div>
-        <h1>Get a list of all this user's repos:</h1>
+        <h1>Get a list of all of a user's repos:</h1>
         <form id="getName">
           <label for="username">Enter a Github Username</label>
           <input type="text" id="name">
@@ -31,6 +34,7 @@
         </form>
       </div>
     </div>
+    <div id="picture"></div>
     <ul class="showRepos"></ul>
   </body>
 </html>
