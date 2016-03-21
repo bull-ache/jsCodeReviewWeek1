@@ -4,6 +4,22 @@ exports.apiKey = "3ec084b296ca7bdfdc9169ce1ddde7106c2878d1";
 },{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
 
+  exports.getProfile = function(repos){
+    $.get('https://api.github.com/users/' + repos + '?access_token=' + apiKey).then(function(response){
+      console.log(response);
+      $('.showPicture').append('<img src='+ response[0].owner.avatar_url +'>');
+      $('.showFullName').append('<ul><li> Real Name: ' + response[i].name + '</li></ul>');
+      $('.showEmail').append('<ul><li> Description: ' + response[i].email + '</li></ul>');
+      $('.showFollowers').append('<ul><li> Repo Name: ' + response[i].followers + '</li></ul>');
+      $('.showFollowing').append('<ul><li> Description: ' + response[i].following + '</li></ul>');
+    }).fail(function(error){
+      console.log(error.responseJSON.message);
+    });
+  };
+
+},{"./../.env":1}],3:[function(require,module,exports){
+var apiKey = require('./../.env').apiKey;
+
   exports.getRepos = function(repos){
     $.get('https://api.github.com/users/' + repos + '/repos?access_token=' + apiKey).then(function(response){
       console.log(response);
@@ -19,11 +35,12 @@ var apiKey = require('./../.env').apiKey;
     });
   };
 
-},{"./../.env":1}],3:[function(require,module,exports){
+},{"./../.env":1}],4:[function(require,module,exports){
 var getRepos = require('./../js/getRepos.js').getRepos;
+var getProfile = require('./../js/getProfile.js').getProfile;
 
 $(document).ready(function(){
-  $('#getName').submit(function(event){
+  $('#getProfile').submit(function(event){
   event.preventDefault();
   $('#picture').empty("");
   $('.showRepos').empty("");
@@ -33,6 +50,16 @@ $(document).ready(function(){
   });
 
 
+
+
+  $('#getName').submit(function(event){
+  event.preventDefault();
+  var repos = $('#name').val();
+  getRepos(repos);
+  $('#name').val("");
+  });
+
+
 });
 
-},{"./../js/getRepos.js":2}]},{},[3]);
+},{"./../js/getProfile.js":2,"./../js/getRepos.js":3}]},{},[4]);
