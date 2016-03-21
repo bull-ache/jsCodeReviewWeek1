@@ -1,5 +1,6 @@
 $lightblue : #619e9e;
-
+$aquablue : #87b3b3;
+$grey: #aaaaaa;
 
 .img-circle {
     border-radius: 50%;
@@ -9,8 +10,12 @@ $lightblue : #619e9e;
 
 
 .jumbotron {
-
+  background: $grey;
   text-align: center;
+}
+
+body {
+  background: $aquablue
 }
 
 .container {
