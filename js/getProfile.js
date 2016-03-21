@@ -1,6 +1,6 @@
 var apiKey = require('./../.env').apiKey;
 
-  exports.getRepos = function(repos){
+  exports.getProfile = function(repos){
     $.get('https://api.github.com/users/' + repos + '/repos?access_token=' + apiKey).then(function(response){
       console.log(response);
       $('#picture').append('<img src='+ response[0].owner.avatar_url +'>');

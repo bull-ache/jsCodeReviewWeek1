@@ -9,15 +9,27 @@
   </head>
   <body>
     <div class="container">
-      <h1>Get a list of all repos associated with a username:</h1>
-      <div id="form">
+      <h1>Type in a username to see their profile:</h1>
+      <div>
+        <form id="getProfile">
+          <label for="username">Enter a Github Username</label>
+          <input type="text" id="name">
+          <button type="submit">Submit</button>
+        </form>
+        <ul class="showPicture"></ul>
+        <ul class="showFullName"></ul>
+        <ul class="showEmail"></ul>
+        <ul class="showFollowers"></ul>
+        <ul class="showFollowing"></ul>
+      </div>
+      <div>
+        <h1>Get a list of all this user's repos:</h1>
         <form id="getName">
           <label for="username">Enter a Github Username</label>
           <input type="text" id="name">
           <button type="submit">Submit</button>
         </form>
       </div>
-      <div id="picture"></div>
     </div>
     <ul class="showRepos"></ul>
   </body>
