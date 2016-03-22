@@ -1,19 +1,19 @@
 # _GitHub API Code Review_
 
-#### _First JavaScript Code Review for Epicodus PHP, 3.18.2016_
+#### _First Code Review for Epicodus's JS Class - 3.18.2016_
 
 ### By _**Blake Scott**_
 
 ## Description
 
-_This web app is designed to allow a user to enter a github username and see a returned list of repository names and descriptions of those repos.  A user can also enter a username in a separate search field to return a profile with specific information associated with that username.  
+This web app is designed to allow a user to enter a github username and see a returned list of repository names and descriptions of those repos.  A user can also enter a username in a separate search field to return a profile with specific information associated with that username.  
 
 ## Setup/Installation Requirements
 
 ### Setup of databases
 
-1. _Fork and clone this repository from_[gitHub] https://github.com/blakerscott/jsCodeReviewWeek1.git.
-2. _Navigate to the root directory of the project and run the following commands:
+1. Fork and clone this repository from https://github.com/blakerscott/jsCodeReviewWeek1.git.
+2. Navigate to the root directory of the project and run the following commands:
 
     npm init
     npm install
@@ -23,18 +23,18 @@ _This web app is designed to allow a user to enter a github username and see a r
 
 ## Known Bugs
 
-_Null
+Null
 
 ## Technologies Used
 
-* _Node.js
-* _npm
-* _Gulp
-* _Bower
-* _Sass
-* _js
-* _css
-* _html
+* Node.js
+* npm
+* Gulp
+* Bower
+* Sass
+* js
+* css
+* html
 
 ### License
 
