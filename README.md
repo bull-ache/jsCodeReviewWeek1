@@ -6,14 +6,14 @@
 
 ## Description
 
-_This web app is designed to allow a user to enter a github username and see a returned list of repository names and descriptions of those repos._  
+_This web app is designed to allow a user to enter a github username and see a returned list of repository names and descriptions of those repos.  A user can also enter a username in a separate search field to return a profile with specific information associated with that username.  
 
 ## Setup/Installation Requirements
 
 ### Setup of databases
 
-1. _Fork and clone this repository from_ [gitHub] https://github.com/blakerscott/jsCodeReviewWeek1.git .
-2. Navigate to the root directory of the project and run the following commands:
+1. _Fork and clone this repository from_[gitHub] https://github.com/blakerscott/jsCodeReviewWeek1.git.
+2. _Navigate to the root directory of the project and run the following commands:
 
     npm init
     npm install
@@ -23,13 +23,18 @@ _This web app is designed to allow a user to enter a github username and see a r
 
 ## Known Bugs
 
-_The feature to search for and see a user profile currently contains a bug.  The feature is not operational at this time_
+_Null
 
 ## Technologies Used
 
-* _This project was built on [Node.js](https://nodejs.org/en/)._
-* _Dependencies were handled with [npm](https://www.npmjs.com/) and [Bower](http://bower.io/)._
-* _[Gulp](http://gulpjs.com/) is the asset pipeline used in this project._
+* _Node.js
+* _npm
+* _Gulp
+* _Bower
+* _Sass
+* _js
+* _css
+* _html
 
 ### License
 
@@ -43,4 +48,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
