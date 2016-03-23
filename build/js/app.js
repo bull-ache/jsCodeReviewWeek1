@@ -29,7 +29,7 @@ var apiKey = require('./../.env').apiKey;
       for(var i = 0; i < response.length; i++)
       {
         $('.showRepos').append('<ul><li> Repo Name: ' + response[i].full_name + '</li></ul>');
-         $('.showRepos').append('<ul><li> Description: ' + response[i].description + '</li></ul>');
+        $('.showRepos').append('<ul><li> Description: ' + response[i].description + '</li></ul>');
       }
     }).fail(function(error){
       console.log(error.responseJSON.message);
@@ -42,24 +42,24 @@ var getRepos = require('./../js/getRepos.js').getRepos;
 
 $(document).ready(function(){
   $('#getProfile').submit(function(event){
-  event.preventDefault();
-  $('#showPicture').empty("");
-  $('#showFullName').empty("");
-  $('#showEmail').empty("");
-  $('#showFollowers').empty("");
-  $('#showFollowing').empty("");
-  var repos = $('#username').val();
-  getProfile(repos);
-  $('#username').val("");
+    event.preventDefault();
+    $('#showPicture').empty("");
+    $('#showFullName').empty("");
+    $('#showEmail').empty("");
+    $('#showFollowers').empty("");
+    $('#showFollowing').empty("");
+    var repos = $('#username').val();
+    getProfile(repos);
+    $('#username').val("");
 
   });
   $('#getName').submit(function(event){
-  event.preventDefault();
-  $('#picture').empty("");
-  $('.showRepos').empty("");
-  var repos = $('#name').val();
-  getRepos(repos);
-  $('#name').val("");
+    event.preventDefault();
+    $('#picture').empty("");
+    $('.showRepos').empty("");
+    var repos = $('#name').val();
+    getRepos(repos);
+    $('#name').val("");
   });
 });
 

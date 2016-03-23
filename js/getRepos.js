@@ -8,7 +8,7 @@ var apiKey = require('./../.env').apiKey;
       for(var i = 0; i < response.length; i++)
       {
         $('.showRepos').append('<ul><li> Repo Name: ' + response[i].full_name + '</li></ul>');
-         $('.showRepos').append('<ul><li> Description: ' + response[i].description + '</li></ul>');
+        $('.showRepos').append('<ul><li> Description: ' + response[i].description + '</li></ul>');
       }
     }).fail(function(error){
       console.log(error.responseJSON.message);
